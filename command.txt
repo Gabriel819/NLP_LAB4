@@ -1,0 +1,38 @@
+20214047 Jimin Sohn
+
+1. Show the structure of your codes
+
+nlp-lab-4-Gabriel819/
+├── code
+│   ├── dataloader.py
+│   ├── lstm.py
+│   ├── test.py
+│   ├── train.py
+|   ├── make_submission.py
+│   └── utils.py
+|
+├── command.txt
+├── result
+│   └── pred_attn_ar_tf_nllloss_1.npy
+├── submissions
+│   └── 20214047_8.csv
+├── data
+│   └── de-en
+│       ├── nmt_simple_len.tgt.test.npy
+│       ├── nmt_simple.src.test.txt
+│       ├── nmt_simple.src.train.txt
+│       ├── nmt_simple.src.vocab.pkl
+│       ├── nmt_simple.tgt.train.txt
+│       ├── nmt_train_8000_src.txt
+│       ├── nmt_train_8000_tgt.txt
+│       ├── nmt_valid_2000_src.txt
+│       ├── nmt_valid_2000_tgt.txt
+│       └── nmt_simple.tgt.vocab.pkl
+└── README.md
+
+
+2. Give the example command to reproduce your result
+* attention + autoregressive + teacher forcing + masking + gradient clipping made the best result.
+* the command's principle is the same as the skeleton code, so non-autoregressive and other options can be varied following the argument you gave us.
+$ python train.py --num-layers 4 --max-len 20 --hidden-size 512 --n_epochs 100 --batch-size 128 --lr 0.001 --autoregressive --attn --teacher_forcing
+$ python test.py --num-layers 4 --max-len 20 --hidden-size 512 --n_epochs 100 --batch-size 128 --lr 0.001 --autoregressive --attn --teacher_forcing
